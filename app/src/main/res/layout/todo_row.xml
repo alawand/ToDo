@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF9f9f9"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <CheckBox
+        android:id="@+id/listItemTodoCompleted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:enabled="false"
+        android:focusable="false"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/splash_black"
+        android:text="NAME"
+        android:id="@+id/listItemTodoSubject"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/listItemTodoPriority"
+        android:layout_toRightOf="@+id/listItemTodoCompleted"
+        android:layout_marginStart="2dp"
+        android:layout_marginLeft="2dp"
+        android:ellipsize="end"
+        android:scrollHorizontally="true"
+        android:maxLines="1"
+        android:layout_marginBottom="2dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="PRIORITY"
+        android:id="@+id/listItemTodoPriority"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="18dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="18dp"/>
+
+    <TextView
+        android:id="@+id/listItemTodoDueDate"
+        android:textSize="14sp"
+        android:text="DUE DATE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/listItemTodoSubject"
+        android:layout_alignLeft="@+id/listItemTodoSubject"
+        android:layout_alignStart="@+id/listItemTodoSubject"
+        android:layout_marginLeft="8dp"
+        android:layout_marginStart="8dp"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="General">
+        <ListPreference
+            android:title="Sort Order"
+            android:summary="The properties that will determine the sort order"
+            android:key="sort_order"
+            android:entries="@array/sort_entries"
+            android:entryValues="@array/sort_values"
+            android:defaultValue="1"/>
+    </PreferenceCategory>
+</PreferenceScreen>
