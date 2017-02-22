@@ -4,7 +4,7 @@
 
 Submitted by: **Abed Lawand**
 
-Time spent: 11 hours spent in total
+Time spent: 13 hours spent in total
 
 ## User Stories
 
@@ -26,12 +26,16 @@ The following **optional** features are implemented:
 The following **additional** features are implemented:
 
 * [x] Add ability to specify the sort order of the task items (priority or due date)
+* [x] Added category filter to the main todo list
+* [x] Added app preference to disable/enable splash screen
+* [x] Added app preference to toggle background color of main list
+* [x] Added app preference to set default category shown at app startup
 
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/XLDM3Jy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/94PDMMq.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
