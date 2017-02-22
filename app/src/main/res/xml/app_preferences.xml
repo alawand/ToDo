@@ -1,13 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
     <PreferenceCategory
-        android:title="General">
+        android:title="@string/pref_category_general">
+        <CheckBoxPreference
+            android:title="@string/splash_screen_pref_title"
+            android:key="show_splash_screen"
+            android:defaultValue="true"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/pref_category_color">
+        <CheckBoxPreference
+            android:title="Dark Background"
+            android:key="background_color"
+            android:defaultValue="false"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/pref_category_todo">
         <ListPreference
-            android:title="Sort Order"
-            android:summary="The properties that will determine the sort order"
+            android:title="@string/sort_order_pref_title"
+            android:summary="@string/sort_order_pref_summary"
             android:key="sort_order"
             android:entries="@array/sort_entries"
             android:entryValues="@array/sort_values"
             android:defaultValue="1"/>
+
+        <ListPreference
+            android:title="@string/category_pref_title"
+            android:summary="@string/category_pref_summary"
+            android:key="default_category"
+            android:entries="@array/navigation_cat_entries"
+            android:entryValues="@array/navigation_cat_values"
+            android:defaultValue="0"/>
+
     </PreferenceCategory>
 </PreferenceScreen>

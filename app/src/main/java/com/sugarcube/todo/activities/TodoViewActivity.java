@@ -58,7 +58,7 @@ public class TodoViewActivity extends AppCompatActivity {
 
         // grab the category text
         String[] cat_array = getResources().getStringArray(R.array.category_items);
-        category.setText(cat_array[pojo.getCategory()]);
+        category.setText(cat_array[pojo.getCategory()  - 1]);
         status.setText(pojo.isDone()?getString(R.string.task_completed):getString(R.string.task_in_progress));
         note.setText(pojo.getNote());
     }

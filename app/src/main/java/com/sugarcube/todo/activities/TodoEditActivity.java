@@ -52,11 +52,8 @@ public class TodoEditActivity extends AppCompatActivity implements DatePickerDia
         });
 
         note = (EditText) findViewById(R.id.todo_edit_note);
-
         priority = (Spinner) findViewById(R.id.todo_edit_priority);
         category = (Spinner) findViewById(R.id.todo_edit_category);
-        //status = (Spinner) findViewById(R.id.todo_edit_status);
-
         completed = (CheckBox) findViewById(R.id.todo_edit_completed);
 
         clearDueDate = (Button) findViewById(R.id.clear_due_date);
@@ -81,7 +78,9 @@ public class TodoEditActivity extends AppCompatActivity implements DatePickerDia
         dueDate.setText(pojo.getDueDate());
 
         priority.setSelection(pojo.getPriority().ordinal());
-        category.setSelection(pojo.getCategory());
+
+
+        category.setSelection(pojo.getCategory() - 1 );
 
         if ((pojo.getDueDate() != null)  && (pojo.getDueDate().isEmpty() == false) ) {
             clearDueDate.setVisibility(View.VISIBLE);
@@ -96,7 +95,9 @@ public class TodoEditActivity extends AppCompatActivity implements DatePickerDia
         pojo.setNote(note.getText().toString());
         pojo.setDueDate(dueDate.getText().toString());
         pojo.setPriority(Todo.Priority.valueOf(priority.getSelectedItem().toString()));
-        pojo.setCategory(category.getSelectedItemPosition());
+
+        // make pojos categories 1 based.
+        pojo.setCategory(category.getSelectedItemPosition() +1 );
         pojo.setDone(completed.isChecked());
     }
 

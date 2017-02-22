@@ -149,9 +149,11 @@ public class TodoDbAdapter {
         return sqlDB.delete(TODO_TABLE,  COLUMN_ID + " = " + id, null);
     }
 
-    public ArrayList<Todo> getAllTodos(int sortOrder) {
+    public ArrayList<Todo> getAllTodos(int sortOrder, int category) {
 
-        String orderBy = null;
+        String orderBy;
+        String whereClause = null;
+        String[] whereArgs = null;
 
         if (sortOrder == 1) {
             orderBy = ORDER_BY_PRIORTY;
@@ -160,8 +162,16 @@ public class TodoDbAdapter {
             orderBy = ORDER_BY_DUE_DATE;
         }
 
+        if (category != 0) {
+            whereClause = COLUMN_CATEGORY + " = ?";
+
+            whereArgs = new String[1];
+            whereArgs[0] = Integer.toString(category);
+
+        }
+
         ArrayList<Todo> notes = new ArrayList<>();
-        Cursor cursor = sqlDB.query(TODO_TABLE, ALL_COLUMNS, null, null,null,null, orderBy);
+        Cursor cursor = sqlDB.query(TODO_TABLE, ALL_COLUMNS, whereClause, whereArgs ,null,null, orderBy);
 
         for (cursor.moveToFirst(); !cursor.isAfterLast(); cursor.moveToNext())
         //for (cursor.moveToLast(); !cursor.isBeforeFirst(); cursor.moveToPrevious())

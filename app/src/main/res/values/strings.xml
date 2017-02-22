@@ -32,6 +32,20 @@
         <item>HIGH</item>
     </string-array>
 
+
+    <string-array name="navigation_cat_entries">
+        <item>All</item>
+        <item>Default</item>
+        <item>Personal</item>
+        <item>Work</item>
+    </string-array>
+    <string-array name="navigation_cat_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
     <string-array name="category_items">
         <item>Default</item>
         <item>Personal</item>
@@ -42,6 +56,8 @@
         <item>In Progress</item>
         <item>Completed</item>
     </string-array>
+
+
     <string-array name="sort_entries">
         <item>Priority</item>
         <item>Due Date</item>
@@ -54,6 +70,14 @@
     <string name="title_activity_splash_screen">SplashScreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="category_pref_summary">The category list that will be selected at the application startup</string>
+    <string name="category_pref_title">Category to show at startup</string>
+    <string name="sort_order_pref_title">Sort Order</string>
+    <string name="sort_order_pref_summary">The properties that will determine the sort order</string>
+    <string name="splash_screen_pref_title">Splash Screen</string>
+    <string name="pref_category_general">General</string>
+    <string name="pref_category_color">Color</string>
+    <string name="pref_category_todo">ToDo</string>
 
 
 </resources>

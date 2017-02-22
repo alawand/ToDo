@@ -9,6 +9,7 @@ import android.support.v4.app.ListFragment;
 import android.view.View;
 import android.widget.ListView;
 
+import com.sugarcube.todo.models.ToDoApplication;
 import com.sugarcube.todo.models.Todo;
 import com.sugarcube.todo.adapters.TodoAdapter;
 import com.sugarcube.todo.adapters.TodoDbAdapter;
@@ -22,6 +23,7 @@ import java.util.ArrayList;
  */
 public class MainActivityListFragment extends ListFragment {
 
+    private final static String TAG = "MainActivityFrag";
     private ArrayList<Todo> todoList;
     private TodoAdapter todoAdapter;
 
@@ -33,17 +35,24 @@ public class MainActivityListFragment extends ListFragment {
         return todoList;
     }
 
+
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+
         super.onActivityCreated(savedInstanceState);
 
         SharedPreferences sharedPreferences  = PreferenceManager.getDefaultSharedPreferences(getActivity());
         String sortOrder = sharedPreferences.getString("sort_order", "1");
 
+        ToDoApplication toDoApplication = (ToDoApplication) getActivity().getApplicationContext();
+
+        int category = toDoApplication.getDefaultCategory();
+
         // wire code to the db
         TodoDbAdapter dbAdapter = new TodoDbAdapter(getActivity().getBaseContext());
         dbAdapter.open();
-        todoList = dbAdapter.getAllTodos(Integer.parseInt(sortOrder));
+        todoList = dbAdapter.getAllTodos(Integer.parseInt(sortOrder), category);
         dbAdapter.close();
         todoAdapter = new TodoAdapter(getActivity(), todoList);
         setListAdapter(todoAdapter);
@@ -64,9 +73,5 @@ public class MainActivityListFragment extends ListFragment {
         // start
         startActivity(intent);
     }
-
-
-
-
 } // eoc
 

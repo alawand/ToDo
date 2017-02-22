@@ -1,13 +1,12 @@
 package com.sugarcube.todo.activities;
 
+
 import android.os.Bundle;
 import android.preference.PreferenceFragment;
-import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
-
 import com.sugarcube.todo.R;
 
-public class AppPreferences extends AppCompatActivity {
+public class AppPreferences extends AppCompatActivity  {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +26,6 @@ public class AppPreferences extends AppCompatActivity {
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-
             addPreferencesFromResource(R.xml.app_preferences);
         }
     }
